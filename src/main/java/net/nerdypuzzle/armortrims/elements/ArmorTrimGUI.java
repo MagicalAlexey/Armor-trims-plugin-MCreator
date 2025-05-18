@@ -27,9 +27,12 @@ import net.mcreator.util.image.ImageUtils;
 import net.mcreator.workspace.elements.ModElement;
 import net.nerdypuzzle.armortrims.parts.WTextureComboBoxRenderer;
 
+import javax.annotation.Nullable;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -173,6 +176,12 @@ public class ArmorTrimGUI extends ModElementGUI<ArmorTrim> {
         trim.item = item.getBlock();
         trim.armorTextureFile = (String) armorTextureFile.getSelectedItem();
         return trim;
+    }
+
+    @Override
+    @Nullable
+    public URI contextURL() throws URISyntaxException {
+        return null;
     }
 
 }

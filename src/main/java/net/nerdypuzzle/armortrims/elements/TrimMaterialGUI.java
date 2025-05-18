@@ -18,11 +18,14 @@ import net.mcreator.ui.validation.validators.TextFieldValidator;
 import net.mcreator.util.image.ImageUtils;
 import net.mcreator.workspace.elements.ModElement;
 
+import javax.annotation.Nullable;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 public class TrimMaterialGUI extends ModElementGUI<TrimMaterial> {
     private final ValidationGroup page1group = new ValidationGroup();
@@ -166,6 +169,12 @@ public class TrimMaterialGUI extends ModElementGUI<TrimMaterial> {
         material.color7 = color7.getColor();
         material.color8 = color8.getColor();
         return material;
+    }
+
+    @Override
+    @Nullable
+    public URI contextURL() throws URISyntaxException {
+        return null;
     }
 
 }
